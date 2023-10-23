@@ -10,8 +10,6 @@ public class Battleship {
     public Battleship(int size) {
         this.size = size;
         this.health = size;
-//        this.xCoordinate = x;
-//        this.yCoordinate = y;
         this.isSunk = false;
     }
 
@@ -34,10 +32,6 @@ public class Battleship {
     public void setPosition(int x, int y) {
         this.xCoordinate = x;
         this.yCoordinate = y;
-    }
-
-    public boolean isSunk() {
-        return isSunk;
     }
 
     public void hit() {
