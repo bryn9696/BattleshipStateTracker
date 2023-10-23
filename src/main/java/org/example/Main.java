@@ -19,5 +19,17 @@ public class Main {
 //
 //        System.out.println(ship1X + "" + ship1Y + "" + ship2X + "" + ship2Y);
         gameBoard.printBoard();
+
+//        int x = 3; // Provide the X coordinate for the attack
+//        int y = 4; // Provide the Y coordinate for the attack
+//
+//        boolean shotTaken = gameBoard.takeShot(x, y);
+//
+//        if (shotTaken) {
+//            System.out.println("Shot taken successfully!");
+//            gameBoard.printBoard(); // Print the updated game board
+//        } else {
+//            System.out.println("Invalid shot. Please try again.");
+//        }
     }
 }

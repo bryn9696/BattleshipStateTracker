@@ -1,15 +1,19 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class BattleshipGameBoard {
     private final char[][] board;
     private final int boardSize;
+    private List<Battleship> ships;
 
     public BattleshipGameBoard(int size) {
         boardSize = size;
         board = new char[size][size];
         initializeBoard();
+        ships = new ArrayList<>();
     }
 
     private void initializeBoard() {
@@ -57,4 +61,37 @@ public class BattleshipGameBoard {
         }
         return false;
     }
+
+    public boolean takeShot(int x, int y) {
+        if (x < 0 || x >= boardSize || y < 0 || y >= boardSize) {
+            return false;
+        }
+
+        char cell = board[x][y];
+        if (cell == 'X' || cell == 'O') {
+            return false;
+        }
+
+        boolean hit = false;
+
+        for (Battleship ship : ships) {
+            if (x >= ship.getXCoordinate() && x < ship.getXCoordinate() + ship.getSize() &&
+                    y >= ship.getYCoordinate() && y < ship.getYCoordinate() + 1) {
+                // Hit a ship
+                hit = true;
+                ship.hit();
+                board[x][y] = 'X';
+                System.out.println("Hit!");
+                break;
+            }
+        }
+
+        if (!hit) {
+            board[x][y] = 'O';
+            System.out.println("Miss!");
+        }
+
+        return true;
+    }
+
 }
