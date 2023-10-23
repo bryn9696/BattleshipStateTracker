@@ -58,11 +58,6 @@ public class BattleshipGameBoard {
 
         ship.setPosition(x, y);
         ships.add(ship);
-        for (Battleship s : ships) {
-            System.out.println(s.getXCoordinate());
-            System.out.println(s.getYCoordinate());
-            System.out.println(s.getSize());
-        }
 
         return true;
     }

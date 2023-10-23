@@ -1,10 +1,9 @@
 package org.example;
 
 public class AttackResult {
-    public boolean result(BattleshipGameBoard gameBoard) {
+    public boolean result(BattleshipGameBoard gameBoard, int[] coOrd) {
         boolean gameOver = false;
 
-        int[] coOrd = UserInput.askForInput();
         int x = coOrd[0];
         int y = coOrd[1];
 

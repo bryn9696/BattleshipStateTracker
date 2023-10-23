@@ -1,6 +1,8 @@
 package org.example;
 
-public class Main {
+import java.util.Scanner;
+
+public class BattleshipMain {
     public static void main(String[] args) {
         int boardSize = 10;
         BattleshipGameBoard gameBoard = new BattleshipGameBoard(boardSize);
@@ -23,9 +25,12 @@ public class Main {
         gameBoard.printBoard();
 
         boolean gameOver = false;
-
+        Scanner scanner = new Scanner(System.in);
         while (!gameOver) {
-            gameOver = attackResult.result(gameBoard);
+
+            int[] coOrd = UserInput.askForInput(scanner);
+            gameOver = attackResult.result(gameBoard, coOrd);
         }
+        scanner.close();
     }
 }
